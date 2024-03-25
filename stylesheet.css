@@ -1,0 +1,177 @@
+img {
+  width: 100%; /* 親要素の幅に合わせる */
+  height: auto; /* アスペクト比を保つ */
+}
+
+
+body {
+    background-color: rgb(0, 0, 0);
+    background-image: url('img/spotlight.png'); /* 背景画像のパスを指定 */
+    background-position: center; /* 画像が要素の中央に表示されるように位置を設定 */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.No1 {
+    padding: 40px 20px 20px 20px;
+    box-sizing: border-box; /* 内側の余白を含めた要素のサイズを指定 */
+    max-width: calc(100% - 0px); /* 画像の最大幅を計算して設定 */
+    height: auto;
+}
+ 
+.video {
+    max-width: calc(101%); /* 画像の最大幅を計算して設定 */
+    height: auto;
+    padding: 0px 0px;
+    clip-path: polygon(100% 0%, 0% 20%, 0% 86%, 100% 100%);
+    transform: translateY(-20px); /* 上に20ピクセル移動 */
+}
+
+.video2 {
+  width: 100%; /* 親要素の幅に合わせる */
+  height: auto; /* アスペクト比を保つ */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.application-copy {
+  padding: 10px 20px;
+    box-sizing: border-box; /* 内側の余白を含めた要素のサイズを指定 */
+    max-width: calc(100% - -0px); /* 画像の最大幅を計算して設定 */
+    height: auto;
+}
+
+.copy {
+  transform: translateY(-60px); /* 上に20ピクセル移動 */
+
+}
+
+.saikokyu {
+  padding: 0px px;
+  box-sizing: border-box; /* 内側の余白を含めた要素のサイズを指定 */
+  max-width: calc(100% - 0px); /* 画像の最大幅を計算して設定 */
+  height: auto;
+  animation-delay: 1s;
+}
+
+.senmon {
+  padding: 5px 20px;
+  box-sizing: border-box; /* 内側の余白を含めた要素のサイズを指定 */
+  max-width: calc(100% - 0px); /* 画像の最大幅を計算して設定 */
+  height: auto;
+  animation-delay: 1.5s;
+}
+
+.livechat {
+  padding: 0px 20px;
+  box-sizing: border-box; /* 内側の余白を含めた要素のサイズを指定 */
+  max-width: calc(100% - 0px); /* 画像の最大幅を計算して設定 */
+  height: auto;
+  animation-delay: 2;
+}
+ 
+/* fadeUp */
+
+.fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+  
+  /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+   
+  .fadeUpTrigger{
+      opacity: 0;
+  }
+  
+
+canvas {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    mix-blend-mode: screen; /* オーバーレイを指定 */
+    z-index: 0;
+  }
+  
+  .appText {
+    font-size: 1em; /* テキストのサイズ */
+    color: #dbc669; /* テキストの色 */
+    font-weight: bold; /* フォントの太さ */
+    margin-top: 60px; /* 上のマージン */
+    margin-bottom: 60px; /* 下のマージン */
+    margin-left: 22px;
+    margin-right: 22px;
+    text-align: center; /* テキストを中央揃えにする */
+    line-height: 2; /* 行の高さ */
+    font-family: 'Yu Mincho'; /* フォントファミリー */
+  }
+
+  .iPhone {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px; /* 下のマージン */
+    border-radius: 50px; /* 角の丸みの大きさを調整 */
+    overflow: hidden; /* 角丸の外側の部分を隠す */
+  }
+
+.fukidashi {
+    max-width: 35%;
+    margin-top: 60px; /* 上のマージン */
+    display: block;
+    margin: 0 auto;
+    animation: floating-y 1.8s ease-in-out infinite alternate-reverse;
+}
+@keyframes floating-y {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+.denwaninsho {
+  max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 60px; /* 下のマージン */
+  }
+
+  .woman {
+    max-width: 35%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 60px; /* 下のマージン */
+    opacity: 0;
+    transform: translateX(100%); /* 初期状態で右に隠す */
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.woman.visible {
+    opacity: 1;
+    transform: translateX(0); /* ビューポートに表示されたら元の位置に */
+}
